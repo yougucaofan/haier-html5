@@ -2,13 +2,14 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>此处按规范添加标题|营销活动|海尔家电家居-美好住居生活解决方案提供商</title>
-<meta name="description" content="此处按规范填写摘要" />
-<meta name="keywords" content="此处按规范填写关键字" />
+<title>海尔</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
 <!-- 公用 head start-->
 <!--#include file="/cn/public/public_style/nf_inc_head.shtml"-->
 <!-- 公用 head end-->
 <!-- 导航定位 start-->
+<link rel="stylesheet" href="css/style.css" />
 <script type="text/javascript">var tempUrl = '首页#消费类产品';</script>
 <!--导航定位 end-->
 <!--自定义 head start-->
@@ -21,12 +22,102 @@
 	<!-- header end-->
 	<div class="main_content" >
 		<!--营销活动内容代码填充区域 start-->
-			按规范内容填充区域
+		<div class="body-wrap">
+			<div id="container">
+				<!-- <div class="wrap page1">
+					<div class="p1-con">
+						<div class="p1-slide">
+							<div id="slider">
+								<div class="in">
+									<ul>
+										<li><img src="images/slider1.jpg" alt=""></li>
+										<li><img src="images/slider2.jpg" alt=""></li>
+										<li><img src="images/slider3.jpg" alt=""></li>
+									</ul>
+								</div>
+							</div>
+							<span class="next"></span>
+							<span class="pre"></span>
+						</div>
+						<div class="caption">
+							<img src="images/tit1.jpg" alt="">
+							<p class="btn">
+								<a id="startGo" href=""><img src="images/btn1.jpg" alt="开始烘焙"></a>
+								<a href=""><img src="images/btn2.jpg" alt="立即购买"></a>
+							</p>
+						</div>
+					</div>
+					<div class="m-pic">
+						<img src="images/pic1.png" alt="">
+					</div>
+					<div class="m-bg1"></div>
+				</div>
+				<div class="wrap page2">
+					<div class="pic">
+						<img id="jumpPic" src="images/pic2.jpg" alt="">
+					</div>
+					<div class="m-pic">
+						<img src="images/pic1.png" alt="">
+					</div>
+					<div class="m-bg1"></div>				
+				</div>
+				<div class="wrap page3">
+					<p class="l">
+						<img src="images/pic5.jpg" alt="">
+					</p>
+					<p class="r">
+						<img src="images/tit2.gif" alt="">
+					</p>
+				</div>
+				<div class="wrap page4">
+					<p class="l">
+						<img src="images/pic7.png" alt="">
+					</p>
+					<p class="r">
+						<img src="images/pic8.png" alt="">
+					</p>
+					<div class="bg"></div>
+				</div>
+				<div class="wrap page5">
+					<div class="l">
+						<img src="images/pic11.png" alt="">
+					</div>
+					<div class="r">
+						<img src="images/pic10.png" alt="">
+					</div>
+					<div class="bg"></div>
+				</div>
+				<div class="wrap page6">
+					<div class="l">
+						<img src="images/pic9.png" alt="">
+					</div>
+					<div class="r">
+						<img src="images/pic12.png" alt="">
+					</div>
+					<div class="bg"></div>
+				</div> -->
+				<div class="wrap">6</div>
+				<div class="wrap">7</div>
+				<div class="wrap">8</div>
+				<div class="wrap">99999999999999</div>
+			</div>
+			<div id="pager">
+				<ul>
+					<li class="on"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
 		<!--营销活动内容代码填充区域 end-->
 	</div>
 	<!-- START footer -->
 		<!--#include file="/cn/public/public_footer/nf_inc_footer.shtml"-->
 		<!--#include file="/cn/public/public_style/temp_head.shtml"-->
 	<!-- END footer -->
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/style.js"></script>
 </body>
 </html>

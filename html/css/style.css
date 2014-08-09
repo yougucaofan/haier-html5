@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* global css */
+html{-webkit-font-smoothing:antialiased}/* 润滑字体 */
+body{font:12px/1.5 tahoma,arial,\5b8b\4f53; color: #1a1d1c;background-color: #fff;}
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,th,img,div,blockquote,dl,dt,dd,pre,legend,object,textarea,input,button{margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display: block;}
+button,input,select,textarea{font-family: inherit;font-size: 100%;line-height: normal;}
+button{cursor: pointer;}
+textarea {overflow: auto;vertical-align: top;}
+audio,canvas,video {display:inline-block;*display: inline;*zoom: 1;}
+input,select,img,button{vertical-align:middle}
+h1,h2,h3,h4,h5,h6{font-size: 100%;font-weight: normal;}
+dfn,em,cite,address,caption,i{font-style:normal;}
+fieldset,img,abbr{border: 0;}
+pre {white-space: pre-wrap;}
+del {text-decoration: line-through;}
+img{-ms-interpolation-mode: bicubic;vertical-align: middle;}
+sub,sup{position: relative;font-size: 75%;line-height: 0;vertical-align: baseline;}
+sup{top: -0.5em;}
+sub{bottom: -0.25em;}
+iframe{display: block;}
+ul,ol{list-style-type:none;}
+table{border-collapse:collapse;width:100%;border-spacing:0;}
+th{text-align: inherit;}
+:focus{outline: none;}
+
+a{color: #1a1d1c;text-decoration:none;}
+a:hover,a:focus{text-decoration:underline;}
+
+/***********************
+	具体内容
+***********************/
+.cs3-transition{-webkit-transition:1s ease-in;-moz-transition:1s ease-in;-ms-transition:1s ease-in;-o-transition:1s ease-in;transition:1s ease-in;}
+.on .m-pic,.on .l,.on .r{-webkit-transition:.3s ease-in;-moz-transition:.3s ease-in;-ms-transition:.3s ease-in;-o-transition:.3s ease-in;transition:.3s ease-in;}
+
+/* 基础 */
+body,html{overflow:hidden;width: 100%;height: 100%}
+#container{height: 100%;width: 100%;overflow: hidden;-webkit-transform:translate3d(0, 0, 0);-o-transform:translate3d(0, 0, 0);-moz-transform:translate3d(0, 0, 0);-webkit-ms:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+.wrap{position: relative;overflow: hidden;}
+.body-wrap{zoom:1;position: relative;}
+#pager{position: absolute;top:50%;right: 20px;margin-top: -60px;z-index: 1000;}
+#pager li{background: url(../images/pager24.png) no-repeat;width:20px;height: 20px;margin-bottom: 3px;}
+#pager .on{background-position: 0 bottom;}
+
+/* page1 */
+.page1,.page2{background:#ffc148;}
+
+.m-bg1{position: absolute;bottom:0;left:0;right:0;width:100%;height: 72px;background: #fff;opacity: 0.8;filter:alpha(opacity = 80);}
+.m-pic{position: absolute;bottom: -531px;left:50%;margin-left: -405px;z-index:100;}
+.on .m-pic{bottom:-373px;}
+
+.p1-slide{float: left;width: 284px;position: relative;}
+.p1-slide .next,.p1-slide .pre{position: absolute;top:145px;right:0;background: url(../images/bg.png) -212px 0 no-repeat;width: 26px;height: 49px;cursor: pointer;}
+.p1-slide .pre{background-position: -183px 0;right:auto;left:0;}
+#slider{background: url(../images/bg.png) no-repeat;width: 180px;height: 340px;margin:0 auto;overflow: hidden;}
+#slider .in{margin: 48px auto 0;width: 156px;height: 265px;overflow: hidden;}
+#slider ul{width: 10000px;}
+#slider li{float: left;}
+#slider img{width: 156px;height: 265px;}
+
+.p1-con{width: 580px;margin:162px auto 0;}
+.p1-con .caption{float: right;width: 275px;text-align: center;}
+.p1-con .btn{margin-top: 34px;}
+
+/* page2 */
+.page2 .pic{text-align: center;margin:84px auto 0;}
+
+/* page3 */
+.page3{background:#eee;}
+.page3 .l{margin-top: -250px;margin-left: -512px;left:-512px;}
+.page3 .r{margin-top: -250px;margin-right: -512px;z-index: 2;}
+.l,.r{position: absolute;top:50%;}
+.on .l{left: 50%!important;}
+.on .r{right: 50%!important;}
+
+/* page4 */
+.page4{background:#efefef;}
+.page4 .bg{background:#0b0b0b;width: 50%;height: 100%;float: right;}
+.page4 .l{left:0;margin-top: -250px;margin-left: -446px;left: -446px;}
+.page4 .r{margin-top: -273px;margin-right: -334px;right: -334px;}
+
+/* page5 */
+.page5 .bg,.page6 .bg{background: #eee;width: 50%;height: 100%;float: right;}
+.page5 .l,.page6 .l{margin-top: -157px;margin-left: -424px;left: -424px;}
+.page5 .r{margin-top: -224px;margin-right: -436px;right:-436px;}
+
+/* page6 */
+.page6{background:#ffc148;}
+.page6 .bg{background: url(../images/bg2.jpg) no-repeat;}
+.page6 .r{margin-right: -387px;right: -387px;margin-top: -58px;}
