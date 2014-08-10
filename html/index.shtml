@@ -24,7 +24,7 @@
 		<!--营销活动内容代码填充区域 start-->
 		<div class="body-wrap">
 			<div id="container">
-				<!-- <div class="wrap page1">
+				<div class="wrap page1">
 					<div class="p1-con">
 						<div class="p1-slide">
 							<div id="slider">
@@ -64,8 +64,9 @@
 				<div class="wrap page3">
 					<p class="l">
 						<img src="images/pic5.jpg" alt="">
+						<img id="entity" src="images/pic6.jpg" alt="">
 					</p>
-					<p class="r">
+					<p class="r p3-r">
 						<img src="images/tit2.gif" alt="">
 					</p>
 				</div>
@@ -95,20 +96,46 @@
 						<img src="images/pic12.png" alt="">
 					</div>
 					<div class="bg"></div>
-				</div> -->
-				<div class="wrap">6</div>
-				<div class="wrap">7</div>
-				<div class="wrap">8</div>
-				<div class="wrap">99999999999999</div>
-			</div>
-			<div id="pager">
-				<ul>
-					<li class="on"></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
+				</div>
+				<div class="wrap page7">
+					<div class="l">
+						<img src="images/pic13.png" alt="">
+					</div>
+					<div class="r">
+						<img src="images/pic14.png" alt="">
+					</div>
+					<div class="bg"></div>
+				</div>
+				<div class="wrap page8">
+					<div class="t">
+						<img src="images/pic15.png" alt="">
+					</div>
+					<div class="r">
+						<img src="images/pic16.png" alt="">
+					</div>
+					<div class="bg"></div>
+				</div>
+				<div class="wrap page9">
+					<img src="images/pic17.jpg" alt="">
+				</div>
+				<div class="wrap page10">
+					<div class="t">
+						<img src="images/pic18.jpg" alt="">
+					</div>
+					<div class="tit">
+						<img src="images/tit3.png" alt="">
+						<a class="btn" href=""><img src="images/btn3.jpg" alt=""></a>						
+					</div>
+				</div>
+				<div class="wrap page10">
+					<div class="t">
+						<img src="images/pic19.jpg" alt="">
+					</div>
+					<div class="tit">
+						<img src="images/tit3.png" alt="">
+						<a class="btn" href=""><img src="images/btn3.jpg" alt=""></a>						
+					</div>
+				</div>
 			</div>
 		</div>
 		<!--营销活动内容代码填充区域 end-->
@@ -118,6 +145,9 @@
 		<!--#include file="/cn/public/public_style/temp_head.shtml"-->
 	<!-- END footer -->
 	<script src="js/jquery-1.7.2.min.js"></script>
+	<!--[if lt ie6]>
+		<script type="text/javascript" src="js/iepngfix.js"></script>
+	<![endif]-->
 	<script src="js/style.js"></script>
 </body>
 </html>
