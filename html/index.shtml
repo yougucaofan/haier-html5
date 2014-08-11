@@ -9,7 +9,7 @@
 <!--#include file="/cn/public/public_style/nf_inc_head.shtml"-->
 <!-- 公用 head end-->
 <!-- 导航定位 start-->
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="images/css/style.css" />
 <script type="text/javascript">var tempUrl = '首页#消费类产品';</script>
 <!--导航定位 end-->
 <!--自定义 head start-->
@@ -64,16 +64,20 @@
 				<div class="wrap page3">
 					<p class="l">
 						<img src="images/pic5.jpg" alt="">
-						<img id="entity" src="images/pic6.jpg" alt="">
+						<img class="hidePic" src="images/pic6.jpg" alt="">
 					</p>
-					<p class="r p3-r">
-						<img src="images/tit2.gif" alt="">
-					</p>
+					<div class="r p-text">
+						<p class="sub">Walter Gropius</p>
+						<h3>极简主义设计</h3>
+						<p class="info">极简设计，整机流畅简约，切割工艺精细极致</p>
+					</div>
 				</div>
 				<div class="wrap page4">
-					<p class="l">
+					<div class="l p-text">
+						<h3>触摸式操作，全电脑控制</h3>
+						<p class="info">钻石级切割工艺，双层钢化玻璃触控面板<br />全电脑精准温度处理，时间控制更精细</p>
 						<img src="images/pic7.png" alt="">
-					</p>
+					</div>
 					<p class="r">
 						<img src="images/pic8.png" alt="">
 					</p>
@@ -83,7 +87,9 @@
 					<div class="l">
 						<img src="images/pic11.png" alt="">
 					</div>
-					<div class="r">
+					<div class="r p-text">
+						<h3>跟着名厨学烘焙<br />轻松晋级达人</h3>
+						<p class="info">烤箱定制APP“烤圈”，签约大厨持续更新菜单<br />语音讲解烹饪步骤，不再手忙脚乱<br />APP一键设定烘培温度和流程，轻松搞定美食</p>
 						<img src="images/pic10.png" alt="">
 					</div>
 					<div class="bg"></div>
@@ -92,14 +98,18 @@
 					<div class="l">
 						<img src="images/pic9.png" alt="">
 					</div>
-					<div class="r">
-						<img src="images/pic12.png" alt="">
+					<div class="r p-text">
+						<h3>愈分享愈懂人生美味</h3>
+						<p class="info">烘焙过程发至“烤圈”，帮助焙多芬不断提升<br />美食怎能独享，朋友圈分享、烤圈点赞<br />烘焙食材惊喜礼包，拿到手软</p>
 					</div>
-					<div class="bg"></div>
+					<div class="bg">
+						<img src="images/bg2.jpg" alt="">
+					</div>
 				</div>
 				<div class="wrap page7">
-					<div class="l">
-						<img src="images/pic13.png" alt="">
+					<div class="l p-text">
+						<h3>温控更准确，温区更全面</h3>
+						<p class="info">告别传统机械控温，温控偏差从±30℃提升至±5℃<br />双M专利加热系统，保证温度更加均匀，拒绝“焦”点</br >温度均衡，同一层温度偏差极致到≤10℃</p>	
 					</div>
 					<div class="r">
 						<img src="images/pic14.png" alt="">
@@ -110,29 +120,40 @@
 					<div class="t">
 						<img src="images/pic15.png" alt="">
 					</div>
-					<div class="r">
+					<div class="r p-text">
+						<h3>核心装备，超越传统想象</h3>
+						<p class="info">SUS310不锈钢加热管 提升加热效率，更耐腐蚀、更长寿命<br />360°旋转烤鸡叉，专业水准，烘烤均衡<br />热风对流系统，强力3D循环，充分搅拌热空气，保证温度更加均衡</p>
 						<img src="images/pic16.png" alt="">
 					</div>
 					<div class="bg"></div>
 				</div>
 				<div class="wrap page9">
-					<img src="images/pic17.jpg" alt="">
+					<div class="p-text">
+						<div class="item">
+							<img src="images/pic21.png" alt="">
+							<h3>更人性</h3>
+							<p class="info">APP一键设定流程，闹铃提醒步骤进程<br />预热提示，掌握食物烘焙最佳时机<br />对流风机、旋转烤叉、照明灯独立按键，方便易操作</p>
+						</div>
+						<div class="item">
+							<img src="images/pic22.png" alt="">
+							<h3>更安全</h3>
+							<p class="info">双层钢化玻璃门体，有效阻隔辐射<br />全304食品级不锈钢内胆，告别二次污染<br />门体隔热、加热管防烫条，有效防止意外烫伤</p>
+						</div>
+						<div class="item">
+							<img src="images/pic23.png" alt="">
+							<h3>更易清洁</h3>
+							<p class="info">可翻转加热管，更易烤箱顶部和底部清洁<br />全不锈钢内胆，无需担心划伤涂层<br />钢化玻璃面板，一擦即净</p>
+						</div>
+					</div>
 				</div>
 				<div class="wrap page10">
 					<div class="t">
 						<img src="images/pic18.jpg" alt="">
+						<img class="hidePic" src="images/pic19.jpg" alt="">
 					</div>
-					<div class="tit">
-						<img src="images/tit3.png" alt="">
-						<a class="btn" href=""><img src="images/btn3.jpg" alt=""></a>						
-					</div>
-				</div>
-				<div class="wrap page10">
-					<div class="t">
-						<img src="images/pic19.jpg" alt="">
-					</div>
-					<div class="tit">
-						<img src="images/tit3.png" alt="">
+					<div class="tit p-text">
+						<h3>烤圈智慧互联 大师食谱一键烘焙</h3>
+						<p class="info">25L大容积 双层门体设计<br />精准温控40℃--250℃</br >旋风、上下、旋转烧烤</p>
 						<a class="btn" href=""><img src="images/btn3.jpg" alt=""></a>						
 					</div>
 				</div>
@@ -144,10 +165,10 @@
 		<!--#include file="/cn/public/public_footer/nf_inc_footer.shtml"-->
 		<!--#include file="/cn/public/public_style/temp_head.shtml"-->
 	<!-- END footer -->
-	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="images/js/jquery-1.8.3.min.js"></script>
 	<!--[if lt ie6]>
-		<script type="text/javascript" src="js/iepngfix.js"></script>
+		<script type="text/javascript" src="images/js/iepngfix.js"></script>
 	<![endif]-->
-	<script src="js/style.js"></script>
+	<script src="images/js/style.js"></script>
 </body>
 </html>
