@@ -6,9 +6,14 @@ function pageEffect(obj) {
 	// 隐藏图片，用于css动画完成后显示
 	this.hidePic = this.container.find('.hidePic');
 	this.count = 0;
+
+	// 控制是否能运行动画
 	this.state = true;
 	this.max = this.wrap.length - 1;
 	this.sliderIndex = null;
+
+	// 最后图片渐现
+	this.lastElem = $('#lastElem');
 
 	// 初始化
 	this.init();
@@ -16,7 +21,7 @@ function pageEffect(obj) {
 pageEffect.prototype = {
 
 	// 储存各各的运行时间
-	transitTime: [300, 300 ,1200 ,800 ,800 ,800 ,800 ,800 , 0, 1400],
+	transitTime: [300, 300 ,1200 ,800 ,800 ,800 ,800 ,800 , 0, 800],
 	init:function() {
 
 		// 是否支持css3
@@ -97,7 +102,7 @@ pageEffect.prototype = {
 		function _move() {
 			index++;
 			self.sliderIndex = index;
-			self.sliderIndex--;
+			console.log(self.sliderIndex);
 			current = -index*w + maxW;
 			mover.animate({marginLeft: current});
 		};
@@ -145,11 +150,20 @@ pageEffect.prototype = {
 			};
 		};
 		function _scroll(e) {
+			var lastElem = this.lastElem,
+				isLucency = lastElem.hasClass('on');
 			// 如果container正在动画 或者 本pagecss动画没有完成则return
 			if(this.container.is(':animated') || !this.state) {
 				 return false
 			};
 			var val;
+
+			// 确保滚动结束再去掉
+			if(isLucency) {
+				window.setTimeout(function(){
+					lastElem.removeClass('on').removeAttr('style');
+				}, 500);				
+			};
 
 			// opera两个都支持所以要把wheelDelta放前面，孤立ff
 			val = e.wheelDelta/120 || -(e.detail/3);
@@ -162,6 +176,9 @@ pageEffect.prototype = {
 				this.count = 0;
 			};
 			if(this.count > this.max){
+				if(isLucency == 0) {
+					this.lastElem.animate({'opacity': 1}, 600).addClass('on');
+				};
 				this.count = this.max;
 			};
 
@@ -211,8 +228,7 @@ pageEffect.prototype = {
 			self = this,
 			isSup = this.isSup,
 			mapKey = {
-				2: 600,
-				9: 800
+				2: 600
 			},
 			count = this.count,
 			time = isSup ? mapKey[count] : 0,
@@ -268,7 +284,7 @@ pageEffect.prototype = {
 	changePicAddress:function() {
 		var sliderIndex = this.sliderIndex,
 			changePic = $('#jumpPic'),
-			address = ['pic3.jpg', 'pic4.jpg', 'pic2.jpg'];
+			address = ['pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic2.jpg'];
 
 		if(sliderIndex != null) {
 			changePic.attr('src', 'images/' + address[sliderIndex]);

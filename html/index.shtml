@@ -148,8 +148,8 @@
 				</div>
 				<div class="wrap page10">
 					<div class="t">
+						<img id="lastElem" src="images/pic19.jpg" alt="">
 						<img src="images/pic18.jpg" alt="">
-						<img class="hidePic" src="images/pic19.jpg" alt="">
 					</div>
 					<div class="tit p-text">
 						<h3>烤圈智慧互联 大师食谱一键烘焙</h3>
