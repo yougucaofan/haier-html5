@@ -1,11 +1,20 @@
 function pageEffect(obj) {
+	this.mainWrap = $('#main-wrap');
+	this.mainWrap.addClass('default');
+
+	this.headHeight = $('#nr_hd').outerHeight();
+	this.footHeight = $('#nr_footer').outerHeight();
+	this.autoHeight = 0;
+
+	this.time = 2;
+
 	this.container = $('#container');
 	this.wrap = this.container.find('.wrap');
 	this.clipElem = this.wrap.add('.body-wrap');
 
 	// 隐藏图片，用于css动画完成后显示
 	this.hidePic = this.container.find('.hidePic');
-	this.count = 0;
+	this.count = -1;
 
 	// 控制是否能运行动画
 	this.state = true;
@@ -37,7 +46,7 @@ pageEffect.prototype = {
 		this.addEvent();
 
 		// 初始化选中元素
-		this.handle.first().addClass('on');
+		//this.handle.first().addClass('on');
 	},
 
 	// 右边控制手柄
@@ -151,25 +160,60 @@ pageEffect.prototype = {
 		};
 		function _scroll(e) {
 			var lastElem = this.lastElem,
-				isLucency = lastElem.hasClass('on');
+				isLucency = !lastElem.hasClass('on') && this.count == this.max,
+				isFoot = lastElem.hasClass('on') && this.count == this.max,
+				isDefault = this.mainWrap.hasClass('default'),
+				self = this;
 			// 如果container正在动画 或者 本pagecss动画没有完成则return
 			if(this.container.is(':animated') || !this.state) {
 				 return false
 			};
 			var val;
 
-			// 确保滚动结束再去掉
-			if(isLucency) {
-				window.setTimeout(function(){
-					lastElem.removeClass('on').removeAttr('style');
-				}, 500);				
-			};
-
 			// opera两个都支持所以要把wheelDelta放前面，孤立ff
 			val = e.wheelDelta/120 || -(e.detail/3);
+
+			// 向下滚动
 			if(val < 0) {
+				if(isDefault) {
+					this.mainWrapMove(0);
+					this.mainWrap.removeClass('default');
+					return ;
+				};
+
+				if(isLucency) {
+					this.state = false;
+					lastElem.animate({'opacity': 1}, 300, function() {
+						self.state = true;
+						$(this).addClass('on');
+					});
+					return ;
+				};
+
+				if(isFoot) {
+					if(!this.state) return;
+					this.mainWrapMove();
+					this.mainWrap.addClass('last');
+					return ;
+				};
+
 				this.count++;
+
+			// 向上
 			} else {
+
+				if(isFoot && this.mainWrap.hasClass('last')) {
+					this.mainWrapMove(0);
+					this.mainWrap.removeClass('last');
+					return;
+				};
+
+				if(this.count==0 || this.count==-1) {
+					this.mainWrap.addClass('default');
+					this.mainWrapMove(3);
+					return;
+				}
+
 				this.count--;
 			};
 			if(this.count < 0) {
@@ -210,7 +254,7 @@ pageEffect.prototype = {
 	    if(!this.isSup) {
 			this.wrap.addClass('on');
 		} else {
-			this.wrap.first().addClass('on');
+			//this.wrap.first().addClass('on');
 		};
 	},
 
@@ -219,6 +263,9 @@ pageEffect.prototype = {
 		this.w = $(window).width();
 		this.h = $(window).height();
 		this.clipElem.css('height', this.h);
+
+		// 初始化不设置
+		if(this.count < 0) return;
 		this.setContainerVal(true);
 	},
 
@@ -236,6 +283,7 @@ pageEffect.prototype = {
 
 		// 切换第二屏图片
 		this.changePicAddress();
+		this.mainWrapMove(1);
 
 		// 这个用于窗口大小变化时改变container的top坐标，没动画
 		if(state) {			
@@ -251,6 +299,9 @@ pageEffect.prototype = {
 			}
 
 			this.container.animate({'top': val}, 500 , function() {
+				if(self.count !== self.max) {
+					self.lastElem.removeClass('on').removeAttr('style');
+				};
 				self.handle.removeClass('on').eq(count).addClass('on');
 
 				// 对于高端浏览器才切换on状态。低端则一直都存在on
@@ -290,6 +341,44 @@ pageEffect.prototype = {
 			changePic.attr('src', 'images/' + address[sliderIndex]);
 			sliderIndex = null;
 		}		
+	},
+
+	// 最外层移动
+	mainWrapMove:function(v) {
+		var self = this;
+		this.state = false;
+		switch(v) {
+
+			case 0:
+				this.mainWrap.animate({marginTop: -this.headHeight}, 500, function() {
+					_stateChange();
+					if(self.count < 0) {
+						self.handle.first().click();
+					};
+				});
+				break ;
+
+			case 1:
+				this.mainWrap.css('margin-top', -this.headHeight);
+				_stateChange();
+				break ;
+
+			case 3:
+				this.mainWrap.animate({marginTop: 0}, 500, _stateChange);
+				break ;
+
+			case 4:
+				this.mainWrap.css({marginTop: 0});
+				_stateChange();
+				break ;
+
+			default:
+				this.mainWrap.animate({marginTop: -this.headHeight - this.footHeight}, 500, _stateChange);
+				break ;
+		};
+		function _stateChange() {
+			self.state = true;
+		}
 	}
 };
 

@@ -20,7 +20,8 @@
 	<!-- header start-->
 		<!--#include file="/cn/public/public_header/nf_inc_header.shtml"--> 
 	<!-- header end-->
-	<div class="main_content" >
+	<div class="main_content" id="main-wrap">
+		<div id="nr_hd"></div>
 		<!--营销活动内容代码填充区域 start-->
 		<div class="body-wrap">
 			<div id="container">
@@ -159,6 +160,7 @@
 				</div>
 			</div>
 		</div>
+		<div id="nr_footer"></div>
 		<!--营销活动内容代码填充区域 end-->
 	</div>
 	<!-- START footer -->
