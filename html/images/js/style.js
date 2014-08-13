@@ -164,6 +164,7 @@ pageEffect.prototype = {
 				isFoot = lastElem.hasClass('on') && this.count == this.max,
 				isDefault = this.mainWrap.hasClass('default'),
 				self = this;
+				
 			// 如果container正在动画 或者 本pagecss动画没有完成则return
 			if(this.container.is(':animated') || !this.state) {
 				 return false
