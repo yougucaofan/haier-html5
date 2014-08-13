@@ -20,20 +20,22 @@
 	<!-- header start-->
 		<!--#include file="/cn/public/public_header/nf_inc_header.shtml"--> 
 	<!-- header end-->
-	<div class="main_content" id="main-wrap">
-		<div id="nr_hd"></div>
+	<div id="nr_hd">
+		<img src="images/header.jpg" alt="">
+	</div>
+	<div class="main_content">
 		<!--营销活动内容代码填充区域 start-->
 		<div class="body-wrap">
-			<div id="container">
+			<div id="page-container">
 				<div class="wrap page1">
 					<div class="p1-con">
 						<div class="p1-slide">
 							<div id="slider">
 								<div class="in">
 									<ul>
-										<li><img src="images/slider1.jpg" alt=""></li>
-										<li><img src="images/slider2.jpg" alt=""></li>
-										<li><img src="images/slider3.jpg" alt=""></li>
+										<li><img src="images/pic_slide_1.png" alt=""></li>
+										<li><img src="images/pic_slide_2.png" alt=""></li>
+										<li><img src="images/pic_slide_3.png" alt=""></li>
 									</ul>
 								</div>
 							</div>
@@ -131,17 +133,17 @@
 				<div class="wrap page9">
 					<div class="p-text">
 						<div class="item">
-							<img src="images/pic21.png" alt="">
+							<img src="images/icon1.gif" alt="">
 							<h3>更人性</h3>
 							<p class="info">APP一键设定流程，闹铃提醒步骤进程<br />预热提示，掌握食物烘焙最佳时机<br />对流风机、旋转烤叉、照明灯独立按键，方便易操作</p>
 						</div>
 						<div class="item">
-							<img src="images/pic22.png" alt="">
+							<img src="images/icon2.gif" alt="">
 							<h3>更安全</h3>
 							<p class="info">双层钢化玻璃门体，有效阻隔辐射<br />全304食品级不锈钢内胆，告别二次污染<br />门体隔热、加热管防烫条，有效防止意外烫伤</p>
 						</div>
 						<div class="item">
-							<img src="images/pic23.png" alt="">
+							<img src="images/icon3.gif" alt="">
 							<h3>更易清洁</h3>
 							<p class="info">可翻转加热管，更易烤箱顶部和底部清洁<br />全不锈钢内胆，无需担心划伤涂层<br />钢化玻璃面板，一擦即净</p>
 						</div>
@@ -160,8 +162,10 @@
 				</div>
 			</div>
 		</div>
-		<div id="nr_footer"></div>
 		<!--营销活动内容代码填充区域 end-->
+	</div>
+	<div id="nr_footer">
+		<img src="images/footer.jpg" alt="">		
 	</div>
 	<!-- START footer -->
 		<!--#include file="/cn/public/public_footer/nf_inc_footer.shtml"-->

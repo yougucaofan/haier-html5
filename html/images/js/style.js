@@ -1,6 +1,8 @@
 function pageEffect(obj) {
-	this.mainWrap = $('#main-wrap');
-	this.mainWrap.addClass('default');
+	this.head = $('#nr_hd');
+	this.foot = $('#nr_footer');
+	this.headHeight = this.head.outerHeight();
+	this.footHeight = this.foot.outerHeight();
 
 	this.headHeight = $('#nr_hd').outerHeight();
 	this.footHeight = $('#nr_footer').outerHeight();
@@ -8,9 +10,10 @@ function pageEffect(obj) {
 
 	this.time = 2;
 
-	this.container = $('#container');
+	this.container = $('#page-container');
+	this.bodyWrap = $('.body-wrap');
 	this.wrap = this.container.find('.wrap');
-	this.clipElem = this.wrap.add('.body-wrap');
+	this.clipElem = this.wrap.add(this.bodyWrap);
 
 	// 隐藏图片，用于css动画完成后显示
 	this.hidePic = this.container.find('.hidePic');
@@ -44,9 +47,6 @@ pageEffect.prototype = {
 
 		// 添加各类事件
 		this.addEvent();
-
-		// 初始化选中元素
-		//this.handle.first().addClass('on');
 	},
 
 	// 右边控制手柄
@@ -118,8 +118,7 @@ pageEffect.prototype = {
 
 		// 开始烘焙跳转
 		startGo.click(function() {			
-			self.count++;
-			self.setContainerVal();
+			self.handle.eq(1).click();
 			return false;
 		})
 	},
@@ -138,6 +137,17 @@ pageEffect.prototype = {
 		// 右侧小点添加事件
 		this.handle.bind('click', function() {
 			if(!self.state) return;
+			var my = $(this);
+			if(self.head.is(':visible')) {
+				self.state = false
+				self.head.slideUp(300, function(){
+					self.state = true;
+					self.count = my.index();
+					self.setContainerVal();
+				});
+				return ;
+			};
+
 			self.count = $(this).index();
 			self.setContainerVal();
 		})
@@ -162,7 +172,7 @@ pageEffect.prototype = {
 			var lastElem = this.lastElem,
 				isLucency = !lastElem.hasClass('on') && this.count == this.max,
 				isFoot = lastElem.hasClass('on') && this.count == this.max,
-				isDefault = this.mainWrap.hasClass('default'),
+				head = this.head,
 				self = this;
 				
 			// 如果container正在动画 或者 本pagecss动画没有完成则return
@@ -176,9 +186,17 @@ pageEffect.prototype = {
 
 			// 向下滚动
 			if(val < 0) {
-				if(isDefault) {
-					this.mainWrapMove(0);
-					this.mainWrap.removeClass('default');
+
+				// head 收上去
+				if(head.is(':visible')) {
+					this.state = false;
+					this.head.slideUp(300, function() {
+						self.state = true;
+
+						if(!self.wrap.first().hasClass('on')) {
+						self.handle.first().click();
+						};
+					});
 					return ;
 				};
 
@@ -186,15 +204,15 @@ pageEffect.prototype = {
 					this.state = false;
 					lastElem.animate({'opacity': 1}, 300, function() {
 						self.state = true;
-						$(this).addClass('on');
-					});
+					}).addClass('on');;
 					return ;
 				};
 
 				if(isFoot) {
-					if(!this.state) return;
-					this.mainWrapMove();
-					this.mainWrap.addClass('last');
+					this.state = false;
+					this.bodyWrap.animate({marginTop: -this.footHeight}, 300, function() {
+						self.state = true;
+					}).addClass('active');
 					return ;
 				};
 
@@ -203,16 +221,20 @@ pageEffect.prototype = {
 			// 向上
 			} else {
 
-				if(isFoot && this.mainWrap.hasClass('last')) {
-					this.mainWrapMove(0);
-					this.mainWrap.removeClass('last');
-					return;
-				};
+				if(head.is(':hidden') && this.count <= 0) {
+					this.state = false;
+					this.head.slideDown(function() {
+						self.state = true;
+					})
+					return ;
+				}
 
-				if(this.count==0 || this.count==-1) {
-					this.mainWrap.addClass('default');
-					this.mainWrapMove(3);
-					return;
+				if(isFoot && this.bodyWrap.hasClass('active')) {
+					this.state = false;
+					this.bodyWrap.animate({marginTop:0}, 300, function() {
+						self.state = true;
+					}).removeClass('active');
+					return ;
 				}
 
 				this.count--;
@@ -284,7 +306,6 @@ pageEffect.prototype = {
 
 		// 切换第二屏图片
 		this.changePicAddress();
-		this.mainWrapMove(1);
 
 		// 这个用于窗口大小变化时改变container的top坐标，没动画
 		if(state) {			
